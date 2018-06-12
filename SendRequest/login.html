@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="user">姓名 <br>
+    <input type="text" id="age">年龄 <br>
+    <button>提交</button>
+    <script src="ajax.js"></script>
+    <script>
+        document.querySelector('button').onclick = function() {
+            ajax.post('reg.php', {
+
+                user: user.value,
+                age: age.value
+
+            }, function(res) {
+                if (res.success) {
+
+                }
+            }, 'json');
+        }
+    </script>
+    <script language="JavaScript">
+        function login() {
+            window.location.href = "http://www.baidu.com";
+        }
+        setTimeout('login()', 500); //指定3秒转跳
+    </script>
+
+</body>
+
+</html>
